@@ -10,7 +10,7 @@ const { open}=require('sqlite')
 console.log(databasePath)
 
 const { v4: uuidv4 } = require('uuid');
-const newUUID = uuidv4()
+
 
 let db=null;
 const initializeServerAndDatabase=async()=>{
@@ -41,8 +41,8 @@ app.get("/todos",async(request,response)=>{
 
 // Post new todo
 app.post("/todos", async (request, response) => {
-    const { task_id = newUUID, title, description, completed, created_at = new Date().toISOString() } = request.body;
-
+    const { task_id = uuidv4(), title, description, completed, created_at = new Date().toISOString() } = request.body;
+    
     const createNewTaskQuery = `
     INSERT INTO tasks(task_id, title, description, completed, created_at)
     VALUES (?, ?, ?, ?, ?);
