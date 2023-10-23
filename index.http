@@ -1,0 +1,25 @@
+GET http://localhost:3001/todos/ 
+
+###
+POST http://localhost:3001/todos/ 
+Content-Type: application/json
+
+{
+    "title":"ExpressJS",
+    "description":"Learn Express",
+    "completed":0
+
+}
+
+###
+PUT http://localhost:3001/todos/e418c0d2-5b55-439f-9549-148633f691d0
+Content-Type: application/json
+
+{
+    "title":"Python",
+    "description":"Learn Python",
+    "completed":1
+}
+
+###
+DELETE http://localhost:3001/todos/831cbe61-68e7-45e6-87ff-c32b27a85610
